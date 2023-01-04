@@ -1,0 +1,9 @@
+package com.ezen.book.repository;
+
+import com.ezen.book.domain.MemberVO;
+
+public interface CartDAO {
+
+	MemberVO selectmemberONE(int mn);
+
+}

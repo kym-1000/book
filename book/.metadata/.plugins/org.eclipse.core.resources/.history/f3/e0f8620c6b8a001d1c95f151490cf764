@@ -1,0 +1,35 @@
+package com.ezen.book.controller;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.ezen.book.domain.MemberVO;
+import com.ezen.book.service.CartService;
+
+
+@Controller
+@RequestMapping("/cart/*")
+public class CartController {
+	
+	MemberVO mvo = new MemberVO();
+	
+	@Inject
+	private CartService CartService;
+	
+	
+	@GetMapping("/ShippingInformation")
+	public String pay(Model model, @RequestParam("mn") int mn) {
+		MemberVO bdto = CartService.getDetailmember(mn);
+		
+		model.addAttribute("msg", 2);
+		return "/cart/ShippingInformation";
+	}
+	
+}

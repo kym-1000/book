@@ -1,0 +1,10 @@
+package com.ezen.book.domain;
+
+public class CartVO {
+	Private int cart_num       | int          | NO   |     | NULL    |       |
+	| cart_price     | int          | YES  |     | NULL    |       |
+	| cart_mem_num   | int          | NO   |     | NULL    |       |
+	| cart_amount    | int          | YES  |     | NULL    |       |
+	| cart_writer    | varchar(50)  | YES  |     | NULL    |       |
+	| cart_book_name
+}

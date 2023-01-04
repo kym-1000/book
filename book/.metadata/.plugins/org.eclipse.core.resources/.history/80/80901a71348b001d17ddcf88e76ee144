@@ -1,0 +1,116 @@
+package com.ezen.book.controller;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.ezen.book.domain.CartVO;
+import com.ezen.book.domain.MemberVO;
+import com.ezen.book.domain.BookVO;
+import com.ezen.book.domain.CartDTO;
+import com.ezen.book.service.CartService;
+
+import lombok.extern.slf4j.Slf4j;
+
+
+@Controller
+@RequestMapping("/cart/*")
+@Slf4j
+public class CartController {
+	
+	
+	
+	@Inject
+	private CartService casv;
+	
+	
+	@GetMapping("/mycart") // 테스트용
+	public String Cart(Model model,@RequestParam("mn") int mn,@RequestParam("bn") int bn) {
+		int isUp;
+		MemberVO mvo = casv.getDetailmember(mn);
+		BookVO bvo = casv.getCartBook(bn); // 장바구니 버튼을 누르면 해당 상품만 가져온다
+		System.out.println(bvo.toString());
+		
+		CartDTO cdo = new CartDTO(mvo.getMem_num(),bvo.getBook_title()); 
+		// 두개의 정보를 담기위해 DTO객체를 생성하여 두개의 값 넣어주기
+		
+		CartVO cvo = casv.getCart(cdo);   //  mn에 해당하는 카트를 가져옴
+		
+		if(cvo == null) {
+			isUp = casv.addCart(bvo);   // 가져온 객체를 장바구니에 넣어준다! 
+		}else {
+			isUp = casv.updateCart(cvo);	// 회원번호가 같고 책 이름이 같은 경우 기존 장바구니 수량을 +1
+		}								
+		
+		if(isUp > 0) {					//  sql 성공유무
+			log.info("카트담기 성공!");
+		}else {
+			log.info("카트담기 실패!");
+		}
+				
+		List<CartVO> Clist = casv.getCartList(mn); // 전체 장바구니 목록을 가져온다! mn넣어서 해당하는것만 가져와!
+		model.addAttribute("Clist",Clist);
+		model.addAttribute("msg",1); 			
+		return "/cart/mycart";
+	}
+	
+	
+	@GetMapping("/ShippingInformation") // 테스트용
+	public String ShippingInformation(Model model, @RequestParam("mn") int mn) {
+		MemberVO mvo = casv.getDetailmember(mn);
+		model.addAttribute("mvo",mvo);
+		model.addAttribute("msg", 2);
+		return "/cart/ShippingInformation";
+	}
+	
+	@PostMapping("/ShippingInformation")
+	public String ShippingInformation1(Model model, @RequestParam("mn") int mn) {
+		MemberVO mvo = casv.getDetailmember(mn);
+		model.addAttribute("mvo",mvo);
+		model.addAttribute("msg", 2);
+		return "/cart/ShippingInformation";
+	}
+
+	
+	
+	@GetMapping("/pay")  // 테스트용
+	public String pay(Model model) {
+
+		model.addAttribute("msg", 3);
+		return "/cart/pay";
+	}
+	
+	@PostMapping("/pay")  
+	public String pay1(Model model,@RequestParam("mn") int mn) {
+		int sum = casv.totalSum(mn);
+		
+		log.info(""+sum);
+		model.addAttribute("msg", 3);
+		return "/cart/pay";
+	}
+	
+	@GetMapping("/order") // 테스트용
+	public String order(Model model) {
+
+		model.addAttribute("msg", 4);
+		return "/cart/order";
+	}
+	
+	@PostMapping("/order") 
+	public String order1(Model model) {
+
+		model.addAttribute("msg", 4);
+		return "/cart/order";
+	}
+	
+}

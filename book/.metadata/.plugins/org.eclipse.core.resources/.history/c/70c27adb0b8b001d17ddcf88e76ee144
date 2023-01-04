@@ -1,0 +1,17 @@
+package com.ezen.book.domain;
+
+public class bookVO {
+	private int	book_num;        
+			book_title;      
+			book_writer;     
+			book_price;     
+			book_saleprice; 
+			book_sales;      
+			book_ publisher; 
+			book_writer_num; 
+			book_date;       
+			book_count;      
+			book_image;      
+			book_content;   
+			book_ca_num;
+}

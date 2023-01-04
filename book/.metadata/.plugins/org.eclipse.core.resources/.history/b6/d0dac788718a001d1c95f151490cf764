@@ -1,0 +1,100 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+	*{
+		margin: auto;
+		padding: 0;
+		}
+		
+	#pay{
+		text-align: center;
+		display : flex;
+		align-items : center;
+		
+	}
+
+
+</style>
+</head>
+<body>
+
+	<jsp:include page="../cart/cartheader.jsp"></jsp:include>
+	
+
+
+
+	<h2 style="text-align: center;"> 결제 정보 확인</h2>
+	
+	<div id="pay">
+	
+	<form action="" method="post">
+
+            <table width="670" border="0" cellpadding="2" cellspacing="1" class="step2_paytable1" style=" border-bottom:0px;">
+              <tbody><tr>
+                <td height="28" >주문상품금액정보</td>
+                <td height="28">&nbsp;&nbsp; 총 <span ><span>1</span></span>권(장),<strong><span >39,600</span></font>원</strong></td>
+              </tr>
+            </tbody></table>
+            <table >
+              <tbody><tr>
+                <td width="335" height="28" align="left" valign="top" class="td3">
+                <table width="335" border="1">
+                  <tbody>
+                    <tr>
+                      <td class="td1">상품 주문 총액  </td>
+                      <td class="td2"><strong><span id="SubPay_Set_lblItemPrice">39,600</span></font>원</strong></td>
+                    </tr>
+                    <tr>
+                      <td class="td1">배송료</td>
+                      <td class="td2"><strong><span >0</span></font>원</strong></td>
+                    </tr>
+                    <tr>
+                      <td class="td1">결제 총액</td>
+                      <td class="td2"><strong>39,600</font>원</strong></td>
+                    </tr>
+                
+                  </tbody>
+                </table>
+                </td>
+                <td width="335" height="28" align="left" valign="top" class="td4">
+
+                <span id="curExchangeCashMoney" style="display:none;">0</span><span  style="display:none;">0</span><span id="curSaveMoneyBranchEBook" style="display:none;">0</span><span id="curSaveMoneyBranchForeign" style="display:none;">0</span><span id="curSaveMoneyBranchUsed" style="display:none;">0</span>
+                <table width="335" >
+                  
+                  <tbody>
+                    <tr>
+                      <td class="td1">회원할인금액</td>
+                      <td class="td2"><span>0</span>원</td>
+                    </tr>
+                    
+                     <tr style="display:none;">
+                      <td class="td1">할인 총액 </td>
+                      <td class="td2"><span >0</span>원</td>
+                    </tr>
+
+                  </tbody>
+                </table>      
+                </td>
+                </tr>
+            </tbody></table>
+            <table width="670" border="1">
+              <tbody><tr>
+                <td height="28" >남은 결제 금액</td>
+                <td height="28" ><strong><span >39,600</span></font>원</strong></td>
+              </tr>
+            </tbody></table>
+
+		</form>
+		
+		</div>
+
+
+
+</body>
+</html>

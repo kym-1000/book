@@ -1,0 +1,27 @@
+package com.ezen.book.repository;
+
+import java.util.List;
+
+import com.ezen.book.domain.CartVO;
+import com.ezen.book.domain.MemberVO;
+import com.ezen.book.domain.BookVO;
+
+public interface CartDAO {
+
+	MemberVO selectmemberONE(int mn);
+
+	BookVO getBook();
+
+	List<CartVO> CartList();
+
+	int addCartBook(BookVO bvo);
+
+	CartVO selectCart(int mn, String book_title);
+
+	
+
+	
+
+	
+
+}

@@ -1,0 +1,31 @@
+package com.ezen.book.service;
+
+import java.util.List;
+
+import com.ezen.book.domain.CartVO;
+import com.ezen.book.domain.MemberVO;
+import com.ezen.book.domain.BookVO;
+
+public interface CartService {
+
+	MemberVO getDetailmember(int mn);
+
+	BookVO getCartBook();
+
+	List<CartVO> getCartList();
+
+	int addCart(BookVO bvo);
+
+	int getCart(int mn, String book_title);
+
+	
+
+	
+
+	
+
+
+
+	
+
+}

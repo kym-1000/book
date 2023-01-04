@@ -1,0 +1,20 @@
+package com.ezen.book.service;
+
+import javax.inject.Inject;
+
+import com.ezen.book.domain.MemberVO;
+import com.ezen.book.repository.CartDAO;
+
+public class CartServiceIm implements CartService {
+	
+	
+	@Inject
+	private CartDAO cdao;
+
+	@Override
+	public MemberVO getDetailmember(int mn) {
+		// TODO Auto-generated method stub
+		return cdao.selectmemberONE(mn);
+	}
+
+}

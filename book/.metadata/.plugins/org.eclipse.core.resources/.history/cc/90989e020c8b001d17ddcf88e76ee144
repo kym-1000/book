@@ -1,0 +1,28 @@
+package com.ezen.book.domain;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@ToString
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class bookVO {
+	private int	book_num;        
+			book_title;      
+			book_writer;     
+			book_price;     
+			book_saleprice; 
+			book_sales;      
+			book_ publisher; 
+			book_writer_num; 
+			book_date;       
+			book_count;      
+			book_image;      
+			book_content;   
+			book_ca_num;
+}

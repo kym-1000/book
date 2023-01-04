@@ -1,0 +1,58 @@
+package com.ezen.book.service;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+
+import com.ezen.book.domain.CartVO;
+import com.ezen.book.domain.MemberVO;
+import com.ezen.book.domain.BookVO;
+import com.ezen.book.repository.CartDAO;
+
+@Service
+public class CartServiceIm implements CartService {
+	
+	
+	@Inject
+	private CartDAO cdao;
+
+	@Override
+	public MemberVO getDetailmember(int mn) {
+		// TODO Auto-generated method stub
+		return cdao.selectmemberONE(mn);
+	}
+
+	@Override
+	public BookVO getCartBook() {
+		// TODO Auto-generated method stub
+		return cdao.getBook();
+	}
+
+	@Override
+	public List<CartVO> getCartList() {
+		// TODO Auto-generated method stub
+		return cdao.CartList();
+	}
+
+	@Override
+	public int addCart(BookVO bvo) {
+		// TODO Auto-generated method stub
+		return cdao.addCartBook(bvo);
+	}
+
+	@Override
+	public CartVO getCart(int mn) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+
+	
+
+	
+	
+
+}

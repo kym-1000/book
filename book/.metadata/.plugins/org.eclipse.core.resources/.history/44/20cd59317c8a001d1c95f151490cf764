@@ -1,0 +1,60 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+		
+		*{
+			margin: auto;
+			padding: 0;
+		}	
+		
+		#cart{
+			margin-left: 200px;
+			margin-right: 200px;
+			text-align: center;
+			align-items : center;
+		}
+
+	</style>
+</head>
+<body>
+
+	<jsp:include page="../cart/cartheader.jsp"></jsp:include>
+	
+	
+	<h2 style="text-align: center;">장바구니임</h2>
+	
+<form action="/cart/ShippingInformation" method="get">
+	<div id="cart">	
+		<table  border="1" id="table">
+			<caption >
+		      배송상품!
+		    </caption> 
+			<thead>
+		      <tr >
+			      <th  colspan="3" scope="col" class="txt">상품정보</th> 
+			      <th  scope="col" >수량</th>
+			      <th  scope="col" >상품금액</th> 
+			      <th  scope="col" >배송정보</th> 
+			      <th  scope="col" >주문</th>
+		      </tr>
+		     </thead> 
+		     
+		      <tbody>
+			      <tr >
+			      	<td  colspan="7" >
+			      		<p  class="txt_tit">카트에 담긴 상품이 없습니다!</p>
+			      	</td>
+			      </tr>
+		      </tbody>
+		      
+		</table>
+	</div>
+	<button type="submit"">주문!</button>
+</form>
+</body>
+</html>

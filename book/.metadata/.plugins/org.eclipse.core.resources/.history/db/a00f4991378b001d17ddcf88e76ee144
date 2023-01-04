@@ -1,0 +1,100 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+	*{
+		margin: auto;
+		padding: 0;
+		}
+		
+	#pay{
+		text-align: center;
+		display : flex;
+		align-items : center;
+		
+	}
+
+
+</style>
+</head>
+<body>
+
+	<jsp:include page="../cart/cartheader.jsp"></jsp:include>
+	
+	<h2 style="text-align: center;"> 결제 정보 확인</h2>
+	
+	<div id="pay">
+	
+	<form action="/cart/order" method="post">
+
+               <table width="335" border="1">
+                 <tbody>
+                   <tr>
+                     <td class="td1">상품 주문 총액  </td>
+                     <td class="td2"><strong><span >${sum}</span>원</strong></td>
+                   </tr>
+                   <tr>
+                     <td class="td1">배송료</td>
+                     <td class="td2"><strong><span >0</span>원</strong></td>
+                   </tr>
+                   <tr>
+                     <td class="td1">결제 총액</td>
+                     <td class="td2"><strong>${sum}</strong></td>
+                   </tr>
+                   <tr>
+                     <td class="td1">회원할인금액</td>
+                     <td class="td2"><span>0</span>원</td>
+                   </tr>
+                     <tr>
+                     <td class="td1">할인총액</td>
+                     <td class="td2"><span>0</span>원</td>
+                   </tr>
+               
+                 </tbody>
+               </table>
+               
+		       <h2 style="text-align: center;">배송방법선택</h2>
+				
+				<div id="productprice" style="text-align: center;">
+						<input type='radio'
+						       name='delivery' 
+						       value='2000' 
+						       onclick='getdeliveryPrice(event)'/>새벽배송(2000원추가)
+						<input type='radio' 
+						       name='delivery' 
+						       value='0' 
+						       onclick='getdeliveryPrice(event)'/>일반배송(0원)
+						<div id='result'></div>
+				</div>
+                
+            <table  border="1">
+               <tbody>
+                 <tr>
+                  <td height="28" >총 결제금액</td>
+                  <td height="28" ><strong><span id='result' >${sum}</span>원</strong></td>
+                 </tr>
+            	</tbody>
+            </table>
+            
+            <button type="submit" id="btn" >주문하기</button>
+
+		</form>
+		
+		</div>
+		
+		<script type="text/javascript">
+			function getdeliveryPrice(event) {
+			  document.getElementById('result').innerText = 
+			    event.target.value+${sum};
+			}
+		</script>
+
+
+
+</body>
+</html>

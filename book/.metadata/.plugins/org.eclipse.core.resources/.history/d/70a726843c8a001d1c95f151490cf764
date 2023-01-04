@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+div{
+    text-align: center;
+    background-color: pink;
+    margin: 300px;
+    font-size: 30px;
+
+}

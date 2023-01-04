@@ -1,0 +1,14 @@
+package com.ezen.book.service;
+
+import java.util.List;
+
+import com.ezen.book.domain.CartVO;
+import com.ezen.book.domain.MemberVO;
+
+public interface CartService {
+
+	MemberVO getDetailmember(int mn);
+
+	List<CartVO> getCart();
+
+}

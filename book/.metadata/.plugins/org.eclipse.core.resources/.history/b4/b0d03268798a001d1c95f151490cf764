@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+		
+		*{
+			margin: auto;
+			padding: 0;
+		}	
+
+	</style>
+</head>
+<body>
+
+	<jsp:include page="../cart/cartheader.jsp"></jsp:include>
+	
+	
+	<h2 style="text-align: center;">장바구니임</h2>
+	
+	<table data-v-3db761a0="" width="100%" class="tb_nor tb_cart"><caption data-v-3db761a0="">
+      YES24배송 상품
+    </caption> <colgroup data-v-3db761a0=""><col data-v-3db761a0="" width="40"> <col data-v-3db761a0="" width="100"> <col data-v-3db761a0="" width="*"> <col data-v-3db761a0="" width="70"> <col data-v-3db761a0="" width="120"> <col data-v-3db761a0="" width="170"> <col data-v-3db761a0="" width="90"></colgroup> <thead data-v-3db761a0=""><tr data-v-3db761a0=""><th data-v-3db761a0="" colspan="3" scope="col" class="txt">상품정보</th> <th data-v-3db761a0="" scope="col" class="txt">수량</th> <th data-v-3db761a0="" scope="col" class="txt">상품금액</th> <th data-v-3db761a0="" scope="col" class="txt">배송정보</th> <th data-v-3db761a0="" scope="col" class="txt lastCol">주문</th></tr></thead> <tbody data-v-3db761a0=""><tr data-v-3db761a0=""><td data-v-3db761a0="" colspan="7" class="noData"><p data-v-3db761a0="" class="txt_tit">카트에 담긴 상품이 없습니다!</p></td></tr></tbody></table>
+</body>
+</html>

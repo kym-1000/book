@@ -1,0 +1,7 @@
+package com.ezen.book.domain;
+
+public class CartDTO {
+	
+	private int Mem_num;
+	private String Book_title;
+}

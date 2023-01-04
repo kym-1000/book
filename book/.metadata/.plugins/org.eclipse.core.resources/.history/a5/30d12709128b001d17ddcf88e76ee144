@@ -1,0 +1,10 @@
+package com.ezen.book.domain;
+
+public class CartVO {
+	Private int cart_num;
+	Private int cart_price;     
+	Private int cart_mem_num;   
+	Private int cart_amount;   
+	Private int cart_writer;    
+	Private int cart_book_name;
+}

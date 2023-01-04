@@ -1,0 +1,14 @@
+package com.ezen.book.domain;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+public class CartDTO {
+	
+	private int Mem_num;
+	private String Book_title;
+}
